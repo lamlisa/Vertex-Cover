@@ -1,0 +1,4 @@
+- algo_couplage : 
+At first, we have an empty set C.
+We look at each edges of G and if none of the two ends of the edge are in C, we add them in C.
+This algorithm has an approximation factor of 2.
