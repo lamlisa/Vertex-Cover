@@ -64,7 +64,6 @@ def algo_couplage2(G):
             visite.add(v)
     return C
 
-
 def algo_glouton(G):
     """
     Input : graph G=(V,E)
@@ -78,7 +77,6 @@ def algo_glouton(G):
         C.add(v)
         g.retirer_sommet(v)
     return C
-
 
 def branchement_simple(G):
     """
@@ -103,7 +101,6 @@ def branchement_simple(G):
             sol = set(som)
 
     return sol
-
 
 def branchement_borner(G, sup = sup_b3,  inf = lambda G: min(len(algo_glouton(G)), (len(algo_couplage(G))))):
     """
@@ -140,9 +137,8 @@ def branchement_borner(G, sup = sup_b3,  inf = lambda G: min(len(algo_glouton(G)
             sol = set(som)
             if len(sol) < borne_inf:
                 borne_inf = len(som)
-
+		
     return sol
-
 
 def branchement_borner3(G, sup = sup_b3,  inf = algo_glouton):
     """
@@ -222,7 +218,6 @@ def branchement_borner2(G, sup = sup_b3,  inf = algo_glouton):
 
     return sol
 
-
 def branchement_borner5(G, sup = sup_b3,  inf = algo_glouton):
     """
     Input : graph G=(V,E)
@@ -242,7 +237,6 @@ def branchement_borner5(G, sup = sup_b3,  inf = algo_glouton):
     stack.append((list(G.voisins(u))+p, G.graphe_reduits(G.voisins(u))))
     stack.append(([u]+p, G.graphe_reduit(u)))
     
-
     while stack:
         som, gTmp = stack.pop()
         p = gTmp.elimine_degre_1()
@@ -264,8 +258,7 @@ def branchement_borner5(G, sup = sup_b3,  inf = algo_glouton):
             
             if len(som) + sup(reduit1) + 1 < len(sol):
                 stack.append((som + [u], reduit1))
-
-            
+  
         #update of the best solution
         elif len(som) < len(sol):
             sol = set(som)
