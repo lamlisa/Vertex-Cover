@@ -1,5 +1,3 @@
-"""Code written by Lisa LAM and Bruno PINTO"""
-
 """
 For copyright reasons, the code for DictionnaireAdjacence is not provided.
 DictionnaireAdjacence is a class representing an undirected graph with a 
